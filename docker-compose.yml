@@ -1,0 +1,24 @@
+version: '3.7'
+
+networks:
+  common:
+    name: common
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: './backend'
+    volumes:
+      - './backend:/var/www/backend'
+      - 'php-socket:/var/run/php'
+      - './backend/dev/ini/max-execution-time.ini:/usr/local/etc/php/conf.d/docker-php-ext-max-execution-time.ini'
+      - './backend/dev/ini/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini'
+    environment:
+      - PHP_IDE_CONFIG=serverName=docker_test
+      - XDEBUG_SESSION=${XDEBUG_SESSION}
+    networks:
+      - common
+
+volumes:
+  php-socket:

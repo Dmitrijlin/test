@@ -1,0 +1,17 @@
+{
+    "name": "root/backend",
+    "type": "project",
+    "require": {
+        "symfony/finder": "5.4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dmitrijlin"
+        }
+    ]
+},
