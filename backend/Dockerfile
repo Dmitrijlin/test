@@ -39,7 +39,7 @@ WORKDIR /var/www/backend
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-COPY composer.json composer.lock auth.json ./
+COPY composer.json composer.lock ./
 
 ENV COMPOSER_MEMORY_LIMIT -1
 
