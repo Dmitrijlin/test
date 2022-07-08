@@ -272,8 +272,3 @@ TestFile97.php
 TestFile98.php
 TestFile99.php
 ```
-
-If you run
-```bash
-
-```
